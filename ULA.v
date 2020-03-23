@@ -1,11 +1,13 @@
-module ULA(Seletor, A, B, S, clock);
+//João Cosmo, Mirele Silva, Ana Louise, Pedro Lucas
+
+
+module ULA(S, Sel, A, B);
 input [7:0] A, B;
-input [3:0] Seletor;
-input clock;
+input [3:0] Sel;
 output reg [15:0] S;	
-	always @(posedge clock)
+	always @(*)
 	begin
-		case (Seletor)
+		case (Sel)
 			4'b0000: S = A + B;
 			4'b0001: S = A - B;
 			4'b0010: S = A * B;
